@@ -77,7 +77,7 @@ public class MetricsController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/simulate-load")
+    @RequestMapping(value = "/simulate-load", method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseEntity<Map<String, String>> simulateLoad() {
         Random random = new Random();
         for (int i = 0; i < 50; i++) {
